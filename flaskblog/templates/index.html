@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+	{% block content %}
+	<!-- Slides -->
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-bottom: 50px;">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="static/assets/img/banner1.jpg" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="static/assets/img/banner2.jpg" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<!-- <h5 class="animated zoomIn" style="animation-delay: 1s">Join Us</h5> -->
+					<!-- <p class="animated fadeInLeft" style="animation-delay: 2s">Protecting sight and fighting for disability rights.</p> -->
+					<!-- <p class="animated zoomIn" style="animation-delay: 3s"> -->
+						<!-- <a href="#">More Info</a> -->
+					<!-- </p> -->
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img src="static/assets/img/banner3.jpg" class="d-block w-100" alt="...">
+				<div class="carousel-caption d-none d-md-block">
+					<!-- <h5 class="animated slideInDown" style="animation-delay: 1s">Death Alert</h5> -->
+					<!-- <p class="animated fadeInUp" style="animation-delay: 2s">Partnered with more than 500 Eye Doctors, technicians and eye donation -->
+						<!-- cousellers.</p> -->
+					<!-- <p class="animated zoomIn" style="animation-delay: 3s"> -->
+						<!-- <a href="#">More Info</a> -->
+					<!-- </p> -->
+				</div>
+			</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+		<!-- Add Death Alert Portion Button -->
+		<div style="background-color: rgb(243, 201, 201);margin-top: -100px;">
+			<section class="container">
+				<h1 style="text-align: center;">Eye donation can be done within 6-8 hours after the death. Raise the death alert to call for our death
+					alert team.</h1>
+				<a href= "{{url_for('about')}}" class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true" style="width: 200px; margin-left: 42%;">Death Alert</a>
+				<h3 style="margin-top: 15px; text-align: center;">Call / Whatsapp us @ 80885 61834</h3>
+			</section>
+		</div>
+
+		<!-- Why Death Alert -->
+		<section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+					<h2 class="section-heading text-uppercase">Why Death Alert and how it can help?</h2>
+					<h4 class="my-3">Everyone deserves to see this colorful world!</h4>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-eye fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">E-Commerce</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">Every year 250000 blind people need eye donation against that only 25000 eyes get donated.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-exclamation fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">Responsive Design</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">Upon your death alert we will send our eye donation team to counsel the family of deceased.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-medkit fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">Web Security</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">If family agrees, only then our team will go ahead with eye donation.</p>
+					</div>
+					<div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-heartbeat fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">Web Security</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">You can help us in restoring eyesight for 2 needy ones by giving death alerts. Your 2 mins can brighten someone’s life</p>
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+		<!-- Cities -->
+		<section class="page-section bg-dark" id="portfolio" style="background-color: darkgray;">
+		<div class="container">
+			<div class="text-center">
+				<h2 class="section-heading text-uppercase" style="color: white;">Cities</h2>
+			</div>
+			<div class="row">
+		{% for city in cities %}
+		{% for c in city %}
+			<div class="col-lg-2 col-sm-6 mb-4">
+				<div class="portfolio-item">
+					<a href="{{ url_for('pressedCity', city = c) }}"
+						>
+						<img class="img-fluid" src="static/assets/img/portfolio/01-thumbnail.jpg" alt=""
+					/></a>
+					<div class="portfolio-caption">
+						<div class="portfolio-caption-heading">{{c}}</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		{% endfor %}
+		</div>
+		</div>
+		</section>
+
+		<!-- Services -->
+		<section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Mission</h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-eye fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">E-Commerce</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">To develop a culture where donation is embraced as fundamental human responsibility.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-exclamation fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">Responsive Design</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">To restore the gift of Vision to every visually impaired human being, irrespective of
+							nationality, religion or socio-economic status.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-medkit fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">Web Security</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">To bridge the gap between No. of eye donations and visually impaired people.</p>
+					</div>
+					<div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-heartbeat fa-stack-1x fa-inverse"></i></span>
+                        <!-- <h4 class="my-3">Web Security</h4> -->
+                        <p class="text-muted" style="font-weight: 900;">To provide quick support on each death alert with help of our team of more than 500 Eye
+							Doctors and Technicians.</p>
+                    </div>
+                </div>
+            </div> 
+		</section>
+
+		<div style="background-color: rgb(243, 201, 201);">
+			<section class="container">
+				<h1 style="text-align: center;">“You saw the classics. Now is their turn.No longer will they have to
+
+					watch nothing.”</h1>
+					<h4 style="text-align: center;">Be socially responsible
+						Join our Noble Cause and become the Eye donation warrior.</h4>
+				<a href= "{{url_for('signup')}}" class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true" style="width: 200px; margin-left: 42%;">Register</a>
+			</section>
+		</div>
+		<!-- Test section -->
+		<!-- <div class="container">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+			</div>
+		</div> -->
+
+		<!-- Our Stat -->
+		<section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our Statistics</h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-eye fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3 counter">100</h4>
+                        <p class="text-muted" style="font-weight: 900;">To develop a culture where donation is embraced as fundamental human responsibility.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-exclamation fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3 counter">50</h4>
+                        <p class="text-muted" style="font-weight: 900;">To restore the gift of Vision to every visually impaired human being, irrespective of
+							nationality, religion or socio-economic status.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-medkit fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3 counter">500</h4>
+                        <p class="text-muted" style="font-weight: 900;">To restore the gift of Vision to every visually impaired human being, irrespective of
+							nationality, religion or socio-economic status.</p>
+					</div>
+					<div class="col-md-3">
+                        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-heartbeat fa-stack-1x fa-inverse"></i></span>
+                        <h4 class="my-3 counter">5000</h4>
+                        <p class="text-muted" style="font-weight: 900;">To restore the gift of Vision to every visually impaired human being, irrespective of
+							nationality, religion or socio-economic status.</p>
+                    </div>
+                </div>
+            </div> 
+		</section>
+
+		<div style="background-color: rgb(243, 201, 201);">
+			<section class="container">
+				<h1 style="text-align: center;">That’s great but I have a question!</h1>
+				<h2 style="text-align: center;">Who can be a eye donor?</h2>
+				<a href= "{{url_for('faq')}}" class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true" style="width: 200px; margin-left: 42%; text-align: center;">Know More</a>
+			</section>
+		</div>
+	{% endblock %}

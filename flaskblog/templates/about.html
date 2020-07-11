@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+	{% block content %}
+	<section class="page-section" id="contact">
+		<div class="container" id="death">
+			<div class="text-center">
+				<h2 class="section-heading text-uppercase">Death Alert</h2>
+				<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+			</div>
+			<form id="contactForm" name="sentMessage" novalidate="novalidate" href="mailto:adityapathak1189@gmail.com" method = "POST" enctype="text/plain">
+				<div class="row align-items-stretch mb-5">
+					<div class="col-md-12">
+						<div class="form-group">
+							<input class="form-control" id="name" type="text" placeholder="Person Name *" required="required" data-validation-required-message="Please enter your name." />
+							<p class="help-block text-danger"></p>
+						</div>
+						<div class="form-group">
+							<select style = "margin-bottom: 20px;" class="form-control" id="email" type="email" placeholder="Death Time *" required="required" data-validation-required-message="Please enter your email address." />
+								<option value="b-1-hr">Before 1 Hour</option>
+								<option value="b-3-hr">Before 3 Hour</option>
+								<option value="b-6-hr">Before 6 Hour</option>
+								<option value="b-8-hr">Before 8 Hour</option>
+							<p class="help-block text-danger"></p>
+						</div>
+						<div class="form-group">
+							<input class="form-control" id="email" type="email" placeholder="City *" required="required" data-validation-required-message="Please enter your email address." />
+							<p class="help-block text-danger"></p>
+						</div>
+						<div class="form-group">
+							<input class="form-control" id="email" type="email" placeholder="Address *" required="required" data-validation-required-message="Please enter your email address." />
+							<p class="help-block text-danger"></p>
+						</div>
+						<div class="form-group">
+							<input class="form-control" id="email" type="email" placeholder="Contact Person Name *" required="required" data-validation-required-message="Please enter your email address." />
+							<p class="help-block text-danger"></p>
+						</div>
+						<div class="form-group mb-md-0">
+							<input class="form-control" id="phone" type="tel" placeholder="Contact Person Phone *" required="required" data-validation-required-message="Please enter your phone number." />
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+				</div>
+				<div class="text-center">
+					<div id="success"></div>
+					<button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Send Message</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	{% endblock %}
